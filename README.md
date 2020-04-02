@@ -1,2 +1,2 @@
-Raimundo Enrique Diaz Parada
+Raimundo Enrique Diaz Parada,
 Gianfranco Stefano Traverso Prado
