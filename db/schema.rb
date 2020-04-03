@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_03_044748) do
+ActiveRecord::Schema.define(version: 2020_04_03_132936) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -25,8 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_03_044748) do
   create_table "event_informations", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.date "start_date"
-    t.integer "event_venue_id", null: false
+    t.integer "event_venue_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_venue_id"], name: "index_event_informations_on_event_venue_id"
@@ -41,8 +40,8 @@ ActiveRecord::Schema.define(version: 2020_04_03_044748) do
   end
 
   create_table "ticket_orders", force: :cascade do |t|
-    t.integer "ticket_type_id", null: false
-    t.integer "customer_id", null: false
+    t.integer "customer_id"
+    t.integer "ticket_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_ticket_orders_on_customer_id"
@@ -50,16 +49,12 @@ ActiveRecord::Schema.define(version: 2020_04_03_044748) do
   end
 
   create_table "ticket_types", force: :cascade do |t|
-    t.string "description"
+    t.string "type_ticket"
     t.decimal "price"
-    t.integer "event_information_id", null: false
+    t.integer "event_information_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_information_id"], name: "index_ticket_types_on_event_information_id"
   end
 
-  add_foreign_key "event_informations", "event_venues"
-  add_foreign_key "ticket_orders", "customers"
-  add_foreign_key "ticket_orders", "ticket_types"
-  add_foreign_key "ticket_types", "event_informations"
 end
