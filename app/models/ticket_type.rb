@@ -1,3 +1,4 @@
 class TicketType < ApplicationRecord
-  has_one :ticket_information
+  belongs_to :ticket_order
+  has_one :event_information
 end

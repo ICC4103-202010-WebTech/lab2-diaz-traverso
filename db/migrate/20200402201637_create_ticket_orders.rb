@@ -1,9 +1,9 @@
-class CreateTicketOrders < ActiveRecord::Migration[6.0]
+class CreateTicketOrder < ActiveRecord::Migration[6.0]
   def change
-    create_table :ticket_orders do |t|
+    create_table :ticket_order do |t|
       t.integer :ID
-      t.integer :ticket
-      t.references :ticket
+      t.references :ticket_type
+      t.references :customer
       t.timestamps
     end
   end

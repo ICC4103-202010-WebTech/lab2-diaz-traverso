@@ -1,11 +1,11 @@
-class CreateEventInformations < ActiveRecord::Migration[6.0]
+class CreateEventInformation < ActiveRecord::Migration[6.0]
   def change
-    create_table :event_informations do |t|
+    create_table :event_information do |t|
       t.integer :ID
       t.string :Name
       t.string :Description
       t.date :Start_date
-      t.reference :Event_venue
+      t.reference :event_venue
 
       t.timestamps
     end
