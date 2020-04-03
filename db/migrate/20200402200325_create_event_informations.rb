@@ -5,7 +5,7 @@ class CreateEventInformations < ActiveRecord::Migration[6.0]
       t.string :Name
       t.string :Description
       t.date :Start_date
-      t.reference *args :Event_venue
+      t.reference :Event_venue
 
       t.timestamps
     end

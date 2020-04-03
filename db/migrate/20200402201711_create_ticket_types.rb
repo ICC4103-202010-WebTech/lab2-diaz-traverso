@@ -4,7 +4,7 @@ class CreateTicketTypes < ActiveRecord::Migration[6.0]
       t.integer :ID
       t.integer :event
       t.numeric :price
-
+      t.references :ticket_orders
       t.timestamps
     end
   end
