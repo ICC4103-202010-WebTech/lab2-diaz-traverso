@@ -41,20 +41,20 @@ ActiveRecord::Schema.define(version: 2020_04_03_132936) do
 
   create_table "ticket_orders", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "ticket_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_ticket_orders_on_customer_id"
-    t.index ["ticket_type_id"], name: "index_ticket_orders_on_ticket_type_id"
   end
 
   create_table "ticket_types", force: :cascade do |t|
     t.string "type_ticket"
     t.decimal "price"
     t.integer "event_information_id"
+    t.integer "ticket_order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_information_id"], name: "index_ticket_types_on_event_information_id"
+    t.index ["ticket_order_id"], name: "index_ticket_types_on_ticket_order_id"
   end
 
 end

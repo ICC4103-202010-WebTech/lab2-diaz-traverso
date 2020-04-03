@@ -21,6 +21,16 @@ venue1.event_information << event1
 venue2.event_information << event2
 venue3.event_information << event3
 
+order1 = TicketOrder.create()
+order2 = TicketOrder.create()
+order3 = TicketOrder.create()
+order4 = TicketOrder.create()
+
+customer1.ticket_orders << order1
+customer1.ticket_orders << order2
+customer2.ticket_orders << order3
+customer2.ticket_orders << order4
+
 ticket_type1 = TicketType.create(price: 100000, type_ticket: "Golden")
 ticket_type2 = TicketType.create(price: 150000, type_ticket: "VIP")
 ticket_type3 = TicketType.create(price: 200000, type_ticket: "Meet & Greet")
@@ -35,23 +45,11 @@ event1.ticket_types << ticket_type4
 event2.ticket_types << ticket_type5
 event3.ticket_types << ticket_type6
 
-order1 = TicketOrder.create()
-order2 = TicketOrder.create()
-order3 = TicketOrder.create()
-order4 = TicketOrder.create()
-
-customer1.ticket_orders << order1
-customer1.ticket_orders << order2
-customer2.ticket_orders << order3
-customer2.ticket_orders << order4
-
-ticket_type1.ticket_orders << order1
-ticket_type2.ticket_orders << order1
-ticket_type4.ticket_orders << order2
-ticket_type5.ticket_orders << order2
-ticket_type2.ticket_orders << order3
-ticket_type3.ticket_orders << order3
-ticket_type6.ticket_orders << order4
-ticket_type1.ticket_orders << order4
-ticket_type2.ticket_orders << order1
-ticket_type5.ticket_orders << order2
+order1.ticket_types << ticket_type1
+order1.ticket_types << ticket_type2
+order2.ticket_types << ticket_type3
+order2.ticket_types << ticket_type4
+order3.ticket_types << ticket_type5
+order3.ticket_types << ticket_type6
+order4.ticket_types << ticket_type1
+order4.ticket_types << ticket_type4
