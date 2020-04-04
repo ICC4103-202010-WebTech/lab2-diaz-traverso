@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_03_132936) do
+ActiveRecord::Schema.define(version: 2020_04_04_165644) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_04_03_132936) do
   create_table "event_informations", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.date "start_date"
     t.integer "event_venue_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -39,6 +40,15 @@ ActiveRecord::Schema.define(version: 2020_04_03_132936) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "order_types", force: :cascade do |t|
+    t.integer "ticket_type_id"
+    t.integer "ticket_order_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ticket_order_id"], name: "index_order_types_on_ticket_order_id"
+    t.index ["ticket_type_id"], name: "index_order_types_on_ticket_type_id"
+  end
+
   create_table "ticket_orders", force: :cascade do |t|
     t.integer "customer_id"
     t.datetime "created_at", precision: 6, null: false
@@ -47,14 +57,12 @@ ActiveRecord::Schema.define(version: 2020_04_03_132936) do
   end
 
   create_table "ticket_types", force: :cascade do |t|
-    t.string "type_ticket"
+    t.string "description"
     t.decimal "price"
     t.integer "event_information_id"
-    t.integer "ticket_order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_information_id"], name: "index_ticket_types_on_event_information_id"
-    t.index ["ticket_order_id"], name: "index_ticket_types_on_ticket_order_id"
   end
 
 end

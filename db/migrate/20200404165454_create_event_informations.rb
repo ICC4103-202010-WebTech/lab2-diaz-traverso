@@ -3,7 +3,7 @@ class CreateEventInformations < ActiveRecord::Migration[6.0]
     create_table :event_informations do |t|
       t.string :name
       t.string :description
-      #t.date :start_date
+      t.date :start_date
       t.references :event_venue
 
       t.timestamps
