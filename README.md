@@ -3,9 +3,9 @@
 * Raimundo Enrique Diaz Parada
 * Gianfranco Stefano Traverso Prado
 
-```diff
-### + What we did to see if the database worked properly was enter the next commands:
-```
+
+### What we did to see if the database worked properly was enter the next commands:
+
 >> First, make the migrations, import the seed file and invoke the console with `rails c`
 ```shell
 $ RAILS_ENV=development rake db:migrate
