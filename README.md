@@ -4,7 +4,7 @@
 * Gianfranco Stefano Traverso Prado
 
 ```diff
-+ ### <span style="color: green"> What we did to see if the database worked properly was enter the next commands:</span>
+### + What we did to see if the database worked properly was enter the next commands:
 ```
 >> First, make the migrations, import the seed file and invoke the console with `rails c`
 ```shell
