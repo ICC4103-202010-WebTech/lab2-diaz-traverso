@@ -1,9 +1,8 @@
 # README
-
-* Raimundo Enrique Diaz Parada
-* Gianfranco Stefano Traverso Prado
-
-
+```diff
++ Raimundo Enrique Diaz Parada
++ Gianfranco Stefano Traverso Prado
+```
 ### What we did to see if the database worked properly was enter the next commands:
 
 >> First, make the migrations, import the seed file and invoke the console with `rails c`
@@ -20,7 +19,6 @@ $ TicketType.all
 $ EventInformation.all
 $ EventVenue.all
 ```
-
 > The following commands are to make sure the orders have 2 ticket types
 ```shell
 $ o1 = TicketOrder.first
