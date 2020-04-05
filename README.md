@@ -4,6 +4,7 @@
 * Gianfranco Stefano Traverso Prado
 
 ### what we did to see if the database worked properly was enter the next commands:
+> First, make the migrations, import the seed file and invoke the console with `rails c`
 ```shell
 $ RAILS_ENV=development rake db:migrate
 $ RAILS_ENV=development rake db:seed
