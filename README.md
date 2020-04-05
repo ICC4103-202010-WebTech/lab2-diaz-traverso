@@ -4,12 +4,8 @@
 * Gianfranco Stefano Traverso Prado
 
 ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
++ ### <span style="color: green"> What we did to see if the database worked properly was enter the next commands:</span>
 ```
-### <span style="color: green"> What we did to see if the database worked properly was enter the next commands:</span>
 >> First, make the migrations, import the seed file and invoke the console with `rails c`
 ```shell
 $ RAILS_ENV=development rake db:migrate
